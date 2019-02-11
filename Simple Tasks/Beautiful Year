@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication10;
+
+import java.util.*;
+
+/**
+ *
+ * @author rsamadov
+ */
+public class JavaApplication10 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+        System.out.println("Please insert N");
+        Scanner in = new Scanner(System.in);
+
+        int a4 = 0, a3 = 0, a2 = 0, a1 = 0;
+
+        int year = in.nextInt();
+
+        boolean tt = true;
+
+        while (tt) {
+
+            a4 = year % 10;
+            a3 = ((year % 100) - a4) / 10;
+            a2 = ((year % 1000) - a3 - a4) / 100;
+            a1 = (year - a2 - a3 - a4) / 1000;
+
+            if ((a1 != a2)
+                    && (a1 != a3) && (a1 != a4) && (a2 != a3) && (a2 != a4) && (a3 != a4)) {
+
+                tt = false;
+                break;
+                // System.exit(0);                
+            }
+
+            year++;
+
+        }
+
+        System.out.println(a1
+                + " " + a2 + " " + a3 + " " + a4);
+
+    }
+
+}
