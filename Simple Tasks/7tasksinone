@@ -1,0 +1,176 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication11;
+
+import java.util.*;
+
+/**
+ *
+ * @author rsamadov
+ */
+public class JavaApplication11 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Pleae insert Task id");
+
+        int taskid = in.nextInt();
+
+        System.out.println("Pleae insert array by finishing any symbol key");
+
+        int a[] = new int[100];
+
+        int i = 0;
+        while (in.hasNextInt()) {
+            a[i] = in.nextInt();
+            i++;
+        }
+
+        for (int l = 0; l <= i - 1; l++) {
+            System.out.print(a[l] + " ");
+        }
+
+        System.out.println(" ");
+
+        switch (taskid) {
+            case 1:
+                System.out.println("The first Task: Find repeated number in array");
+                // double repeat = Math.PI;               
+                for (int l = 0; l <= i - 1; l++) {
+                    for (int k = l + 1; k < i - 1; k++) {
+                        if (a[l] == a[k]) {
+                            System.out.println("Repaeted number " + a[l]);
+                            break;
+                        }
+                    }
+                }
+
+                break;
+            case 2:
+                System.out.println("The second Task: find the minimum and the maximum element in massive");
+
+                int min = 99999;
+                int max = -99999;
+
+                for (int l1 = 0; l1 <= i - 1; l1++) {
+                    if (a[l1] < min) {
+                        min = a[l1];
+                    }
+                    if (a[l1] > max) {
+                        max = a[l1];
+                    }
+
+                }
+
+                System.out.println("The maximum elemnt is =" + max + " the minimum element is =" + min);
+                break;
+
+            case 3:
+                System.out.println("The 3-rd Task: Sorting massive");
+
+                int maxel = -999999;
+                int maxl = -99;
+
+                for (int l2 = 0; l2 <= i - 2; l2++) {
+                    maxel = a[l2];
+                    maxl = l2;
+                    for (int k2 = l2 + 1; k2 <= i - 1; k2++) {
+                        if (a[k2] > maxel) {
+                            maxel = a[k2];
+                            maxl = k2;
+                        }
+                    }
+                    a[maxl] = a[l2];
+                    a[l2] = maxel;
+                }
+
+                for (int l = 0; l <= i - 1; l++) {
+                    System.out.print(a[l] + " ");
+                }
+                break;
+
+            case 4:
+
+                System.out.println("The 4-th Task: Найти сумму и произведение нечетных элементов, кратных 3.");
+
+                int summ = 0;
+                int multiplex = 1;
+
+                for (int l4 = 0; l4 <= i - 1; l4++) {
+                    //Найти сумму и произведение нечетных элементов, кратных 3.
+                    if ((a[l4] % 2 == 0) && (a[l4] % 3 == 0)) {
+                        summ = summ + a[l4];
+                        multiplex = multiplex * a[l4];
+                    }
+                }
+
+                System.out.println(" Summ = " + summ + " Multiplex = " + multiplex);
+                break;
+
+            case 5:
+
+                System.out.println("The 5-th Task: Please insert elemnent A.");
+
+                int quantity = 0;
+                int A = 100;
+
+                if (in.hasNextInt()) {
+                    A = in.nextInt();
+                }
+
+                for (int l5 = 0; l5 <= i - 1; l5++) {
+                    //Найти сумму и произведение нечетных элементов, кратных 3.
+                    if ((a[l5] > 0) && (a[l5] > A)) {
+                        quantity++;
+                    }
+                }
+
+                System.out.println(" Quantity = " + quantity);
+                break;
+
+            case 6:
+
+                System.out.println("The 6-th Task: Найти номера четных элементов, стоящих на нечетных местах.");
+
+                for (int l6 = 0; l6 <= i - 1; l6++) {
+                    if ((a[l6] % 2 == 0) && (l6 % 2 != 0)) {
+                        System.out.println("Element " + a[l6] + " the place " + l6);
+                    }
+                }
+
+                break;
+
+            case 7:
+                System.out.println("The 7-th Task: Найти номер последнего отрицательного элемента массива.");
+
+                int negn = -1;
+
+                for (int l7 = 0; l7 <= i - 1; l7++) {
+                    if (a[l7] < 0) {
+                        negn = l7;
+                    }
+                }
+
+                    if (negn ==-1)
+                    {
+                    System.out.println("There is not negative element" );
+                    }
+                    else {
+                    System.out.println("The last negative is " + a[negn] + " number is " + negn);    
+                    }                                    
+
+                break;
+        }
+
+    }
+
+}
