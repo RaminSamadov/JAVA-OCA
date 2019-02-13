@@ -1,0 +1,80 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication13;
+
+/**
+ *
+ * @author rsamadov
+ */
+public class JavaApplication13 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        // Cikli 1: n Faktorial  https://informatics.mccme.ru/mod/statements/view3.php?id=278&chapterid=351#1
+        int Nfakt = 8;
+        int p = 1;
+
+        for (int i = 1; i <= Nfakt; i++) {
+            p = p * i;
+        }
+        System.out.println("N faktorial = " + p);
+
+        // Cikli 2: 2 v stepeni n   https://informatics.mccme.ru/mod/statements/view3.php?id=278&chapterid=352#1
+        int st = 4;
+        int restask2 = 2;
+
+        for (int i2 = 1; i2 <= st; i2++) {
+            restask2 = restask2 * 2;
+        }
+
+        System.out.println("2 v stepeni N = " + restask2);
+
+        // Spisok Kvadratov  https://informatics.mccme.ru/mod/statements/view3.php?id=249&chapterid=113#1
+        int maxN = 56;
+
+        for (int i3 = 1; i3 < maxN; i3++) {
+            if (i3 * i3 < maxN) {
+                System.out.println("Res: =" + i3 * i3);
+            } else {
+                break;
+            }
+        }
+
+        // Минимальный делитель https://informatics.mccme.ru/mod/statements/view3.php?id=249&chapterid=3058#1
+        int ciN = 85;
+
+        for (int i4 = 2; i4 < ciN; i4++) {
+            if (ciN % i4 == 0) {
+                System.out.println(i4);
+                break;
+            }
+        }
+
+        
+        //  Двоичный логарифм  https://informatics.mccme.ru/mod/statements/view3.php?id=249&chapterid=3061#1
+        
+        
+        int logN = 7;
+        int yu =1;
+        
+        for (int i5=1; i5<logN; i5++)
+        {
+            yu=yu*2;
+            if (yu > logN) {
+              System.out.println(i5);
+              break;
+            }
+        }
+        
+        
+        
+        //  
+        
+    }
+}
