@@ -1,0 +1,57 @@
+package guessgame;
+
+import java.util.*;
+import java.util.Random;
+
+public class Guess {
+
+    public String username;
+    public int result = 0;
+    public double probality;
+
+    int numberlimit;
+
+
+    void Logic() {
+        System.out.println("Welcome to GuessGame");
+        System.out.println("Please enter your name: ");
+        Scanner in = new Scanner(System.in);
+
+        username = in.nextLine();
+
+        System.out.println("Please enter number limit: ");
+        numberlimit = in.nextInt();
+
+        Random r = new Random();
+
+        int random = r.nextInt(numberlimit);
+        System.out.println(random);
+
+        int p = 0;
+
+        boolean t = true;
+
+        while (t) {
+            this.result++;
+
+            System.out.println("Please Guess which number was randomly generated, try# " + this.result);
+            p = in.nextInt();
+            if (random == p) {
+                System.out.println("Wauu you find out it correctly. Take our Congratulations !!!");
+                System.out.println("The result is " + random + " founded in " + this.result + "attempts.");
+                t = false;
+                break;
+            } else {
+                if (random < p) {
+                    System.out.println("You entered bigger than required");
+                } else {
+                    System.out.println("You entered less than required");
+                }
+                //t = false;
+            }
+        }
+    }
+
+    Guess() {
+    }
+}
