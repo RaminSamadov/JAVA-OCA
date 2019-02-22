@@ -1,0 +1,104 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calculator;
+
+/**
+ *
+ * @author rsamadov
+ */
+import java.util.Scanner;
+
+public class Calc {
+
+    void SimpleCalc() {
+        System.out.println("Please insert the first parameter:");
+        Scanner in = new Scanner(System.in);
+
+        double a = in.nextDouble();
+
+        boolean t = true;
+        //double res1 = 0;
+        double res = 0;
+
+        while (t) {
+
+            System.out.println("Please choose operand: + - / *");
+
+            String op = in.next();
+
+            if (check(op) == 0) {
+                System.out.println("Issue wrong operand was choosed");    
+                break;
+            };
+
+            System.out.println("Please insert the second parameter:");
+
+            double b = in.nextDouble();
+
+            switch (op) {
+                case "+":
+                    res = sum(a, b);
+                    break;
+                case "-":
+                    res = minus(a, b);
+                    break;
+                case "/":
+                    res = div(a, b);
+                    break;
+                case "*":
+                    res = multiply(a, b);
+                    break;
+                default:
+                    System.out.println("Incorrect operand was choosed the program abnormally exit");
+                    t = false;
+                    break;
+            }
+
+            if (res == Integer.MIN_VALUE) {
+                System.out.println("Incorrect operand was choosed the program abnormally exit");                
+                break;
+            }
+
+            System.out.println("The result is: " + res);
+            a = res;
+        }
+    }
+
+    double sum(double a, double b) {
+        return a + b;
+    }
+
+    double minus(double a, double b) {
+        return a - b;
+    }
+
+    double multiply(double a, double b) {
+        return a * b;
+    }
+
+    double div(double a, double b) {
+        if (b != 0) {
+            return a / b;
+        }
+        return Integer.MIN_VALUE;
+    }
+
+    int check(String a) {
+
+        switch (a) {
+            case "+":
+                return 1;
+            case "-":
+                return 1;
+            case "/":
+                return 1;
+            case "*":
+                return 1;
+            default:
+                return 0;
+        }
+    }
+}
