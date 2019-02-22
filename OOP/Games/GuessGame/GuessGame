@@ -1,0 +1,29 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package guessgame;
+
+/**
+ *
+ * @author rsamadov
+ */
+public class GuessGame {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        Guess s1 = new Guess();
+        Guess s2 = new Guess();
+        Guess s3 = new Guess();
+
+        s1.Logic();
+        s2.Logic();
+        s3.Logic();
+
+        System.out.println("The results are: for the user " + s1.username + " result is " + s1.result + " for the user  " + s2.username + " the result is " + s2.result + "  for the user  " + s3.username + " result is " + s3.result);
+    }
+}
